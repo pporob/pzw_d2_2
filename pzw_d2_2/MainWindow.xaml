@@ -1,0 +1,48 @@
+﻿<Window x:Class="pzw_d2_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:pzw_d2_2.Controls"
+        Title="MainWindow" Height="500" Width="580" Loaded="Window_Loaded" Background="MintCream">
+    <Grid>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition Height="140"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+                <Button Width="90" Height="40" Margin="5" Background="LightSteelBlue" BorderBrush="LightSteelBlue" x:Name="Left">New user</Button>
+                <Button Width="90" Height="40" Margin="5" Background="LightSteelBlue" BorderBrush="LightSteelBlue" x:Name="Right">Post</Button>
+            </StackPanel>
+
+            <StackPanel x:Name="Me" Grid.Row="1" Grid.Column="0" Margin="5" Background="LightSteelBlue">
+                <controls:User Title="Me"></controls:User>
+            </StackPanel>
+
+            <TextBox Grid.Column="1" Grid.Row="1" Width="350" Height="50" FontSize="30" BorderBrush="LightSteelBlue" x:Name="Kvadrat">Search</TextBox>
+
+            <ScrollViewer Grid.Row="2" Grid.Column="0" VerticalScrollBarVisibility="Auto">
+                <StackPanel Orientation="Vertical" Margin="10"  x:Name="UserContainer">
+                    <controls:User Title="John" ></controls:User>
+                    <controls:User Title="Jane" ></controls:User>
+                    <controls:User Title="Jim" ></controls:User>
+                </StackPanel>
+            </ScrollViewer>
+
+            <ScrollViewer Grid.Row="2" Grid.Column="1" VerticalScrollBarVisibility="Auto" >
+                <StackPanel Orientation="Vertical" Margin="10" x:Name="CommentContainer">
+                    <controls:Post Title="Jim" Comment="My first post"></controls:Post>
+                    <controls:Post Title="John" Comment="Hello Jane!"></controls:Post>
+                    <controls:Post Title="Jane" Comment="Hello John!"></controls:Post>
+                </StackPanel>
+            </ScrollViewer>
+
+        </Grid>
+
+    </Grid>
+</Window>
